@@ -6,14 +6,13 @@
 /*   By: emimenza <emimenza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 16:05:44 by emimenza          #+#    #+#             */
-/*   Updated: 2023/10/02 09:10:56 by emimenza         ###   ########.fr       */
+/*   Updated: 2023/10/23 08:10:53 by emimenza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "libft/libft.h"
 # include <stdarg.h>
 # include <stdio.h>
 # include <string.h>

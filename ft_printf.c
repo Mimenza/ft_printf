@@ -6,7 +6,7 @@
 /*   By: emimenza <emimenza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 11:05:11 by emimenza          #+#    #+#             */
-/*   Updated: 2023/10/10 11:24:05 by emimenza         ###   ########.fr       */
+/*   Updated: 2023/10/23 08:16:36 by emimenza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ int	ft_printf(char const *str, ...)
 // 	//int	print;
 // 	int	ft;
 
+// 	printf("%%");
 // 	ft = ft_printf("%p", NULL);
 // 	//print = printf("%x", -12365643);
 // 	return (0);

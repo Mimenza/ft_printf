@@ -6,7 +6,7 @@
 #    By: emimenza <emimenza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/27 15:57:43 by emimenza          #+#    #+#              #
-#    Updated: 2023/10/20 09:48:58 by emimenza         ###   ########.fr        #
+#    Updated: 2023/10/23 08:15:52 by emimenza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,6 @@ OBJ			=	$(SRC:.c=.o)
 all:	$(NAME)
 
 #Compilar
-#@echo "Compiling libft..."
-#@make -C ./libft
-#@cp libft/libft.a $(NAME)
 $(NAME):$(OBJ) 
 		@$(AR) $(NAME) $(OBJ)
 		@echo "libftprintf compiled!"
@@ -41,15 +38,16 @@ $(NAME):$(OBJ)
 	$(CC) $(CCFLAGS) -c -o $@ $<
 
 # Eliminar temporales
-clean:
-	@make clean -C ./libft
+clean:	
 	$(DEL) $(OBJ)
-	@$(RM) -r $(OBJ_DIR)
-	@echo "Objects and directory cleaned!"
+	@echo "Objects cleaned!"
 
+# $(DEL) libft/libft.a $(NAME)
 fclean: clean
 	$(DEL) $(NAME)
-	$(DEL) libft/libft.a $(NAME)
+	@echo "Objects and librarie cleaned!"
+	
 
 re:	fclean all
+	@echo "Re-launching!"
 

@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_hex.c                                    :+:      :+:    :+:   */
+/*   ft_printf_ptr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emimenza <emimenza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 14:55:24 by emimenza          #+#    #+#             */
-/*   Updated: 2023/10/23 08:12:45 by emimenza         ###   ########.fr       */
+/*   Created: 2023/09/29 12:12:40 by emimenza          #+#    #+#             */
+/*   Updated: 2023/10/18 11:33:17 by emimenza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_len(char *s)
+void	ft_printptr(unsigned long long int ptr, int *len)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	ft_printchar('0', len);
+	ft_printchar('x', len);
+	if (ptr == 0)
+		ft_printchar('0', len);
+	else
+		ft_printnbr_base_ptr(ptr, "0123456789abcdef", len);
 }
 
-void	ft_to_base(unsigned int num, char *base, int *length)
+void	ft_printnbr_base_ptr(uintptr_t nbr, char *base, int *len)
 {
-	size_t	len;
-
-	if (num < 0)
+	if (nbr >= 16)
 	{
-		num = -num;
-		ft_printchar('-', length);
-	}
-	len = ft_len(base);
-	if (num >= len)
-	{
-		ft_to_base(num / len, base, length);
-		ft_to_base(num % len, base, length);
+		ft_printnbr_base_ptr(nbr / 16, base, len);
+		ft_printnbr_base_ptr(nbr % 16, base, len);
 	}
 	else
-		ft_printchar(base[num], length);
+		ft_printchar(base[nbr], len);
 }
